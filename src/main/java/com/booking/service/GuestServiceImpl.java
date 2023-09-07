@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.booking.dao.GuestRepository;
 import com.booking.entity.Guest;
@@ -34,6 +35,11 @@ public class GuestServiceImpl implements GuestService {
 
 		return theGuest;
 	}
+	
+	@Override
+	public List<Guest> findByRoomId(@PathVariable int roomId) {
+		return guestRepository.findByRoomId(roomId);
+	}
 
 	@Override
 	public void save(Guest theGuest) {
@@ -44,5 +50,4 @@ public class GuestServiceImpl implements GuestService {
 	public void deleteById(int theId) {
 		guestRepository.deleteById(theId);
 	}
-
 }

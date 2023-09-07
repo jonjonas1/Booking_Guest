@@ -21,7 +21,7 @@ public class GuestRestController {
 	
 	@Autowired
 	private GuestService guestService;
-
+	
 	@GetMapping("/guests")
 	public List<Guest> findAll() {
 		return guestService.findAll();
@@ -35,6 +35,12 @@ public class GuestRestController {
 			throw new RuntimeException("Guest id not found - " + guestId);
 		}
 		return theGuest;
+	}
+	
+	// find by room id
+	@GetMapping("/guests/roomid/{roomId}")
+	public List<Guest> findByRoomIds(@PathVariable int roomId) {
+		return guestService.findByRoomId(roomId);
 	}
 	
 	@PostMapping("/guests")

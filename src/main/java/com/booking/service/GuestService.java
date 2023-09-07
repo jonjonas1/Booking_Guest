@@ -13,4 +13,7 @@ public interface GuestService {
 	public void save(Guest theGuest);
 
 	public void deleteById(int theId);
+	
+	public List<Guest> findByRoomId(int theRoomId);
+
 }

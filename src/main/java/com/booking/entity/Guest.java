@@ -32,12 +32,10 @@ public class Guest {
 		
 	}
 
-	public Guest(String firstName, String lastName, String email, int roomId) {
-		super();
+	public Guest(String firstName, String lastName, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.roomId = roomId;
 	}
 
 	public int getId() {
